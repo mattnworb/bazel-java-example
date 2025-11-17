@@ -7,7 +7,7 @@ An example of using protobuf and grpc-java in Bazel.
 In one terminal:
 
 ```console
-bazel run //hello-world/java:server
+bazel run //hello-world/java:server -- --port 50051
 ```
 
 which should output:
@@ -20,12 +20,12 @@ INFO: Server started, listening on 50051
 and then in another terminal:
 
 ```console
-bazel run //hello-world/java:cli
+bazel run //hello-world/java:cli -- --target=localhost:50051 Matt
 ```
 
 which should output:
 
 ```console
-sending: name: "Joe"
-received: message: "Hello Joe"
+sending: name: "Matt"
+received: message: "Hello, Matt!"
 ```

@@ -10,6 +10,7 @@ java_binary(
         "@grpc-java//api",
         "@grpc-java//netty",
         "@protobuf//java/core",
+        "@maven//:net_sourceforge_argparse4j_argparse4j",
     ],
 )
 
@@ -25,5 +26,6 @@ java_binary(
         "@grpc-java//protobuf",
         "@grpc-java//stub",
         "@maven//:com_google_guava_guava",
+        "@maven//:net_sourceforge_argparse4j_argparse4j",
     ],
 )

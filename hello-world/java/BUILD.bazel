@@ -1,12 +1,18 @@
 load("@rules_java//java:java_binary.bzl", "java_binary")
 
 java_binary(
+    name = "cli",
+    srcs = ["src/main/java/com/mattnworb/helloworld/HelloWorldCli.java"],
+    main_class = "com.mattnworb.helloworld.HelloWorldCli",
+)
+
+java_binary(
     name = "server",
     srcs = ["src/main/java/com/mattnworb/helloworld/HelloWorldServer.java"],
     main_class = "com.mattnworb.helloworld.HelloWorldServer",
     deps = [
-        "//hello-world/proto/mattnworb/helloworld/v1:service_java_proto",
         "//hello-world/proto/mattnworb/helloworld/v1:service_java_grpc",
+        "//hello-world/proto/mattnworb/helloworld/v1:service_java_proto",
         "@grpc-java//api",
         "@grpc-java//netty",
         "@grpc-java//protobuf",

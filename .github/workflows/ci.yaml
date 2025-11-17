@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Bazel environment
+        uses: bazel-contrib/setup-bazel@0.15.0
+        with:
+          # Avoid downloading Bazel every time.
+          bazelisk-cache: true
+          # Store build cache per workflow.
+          disk-cache: ${{ github.workflow }}
+          # Share repository cache between workflows.
+          repository-cache: true
+
+      - name: bazel test //...
+        run: bazel test //... --action_env=CI=true
+
+      # archive test logs, always
+      - if: ${{ always() }}
+        run: |
+          mkdir /tmp/bazel-logs
+          cp -Rv $(bazel info bazel-testlogs) /tmp/bazel-testlogs
+
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: bazel-testlogs
+          path: /tmp/bazel-testlogs

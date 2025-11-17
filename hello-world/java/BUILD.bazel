@@ -1,0 +1,16 @@
+load("@rules_java//java:java_binary.bzl", "java_binary")
+
+java_binary(
+    name = "server",
+    srcs = ["src/main/java/com/mattnworb/helloworld/HelloWorldServer.java"],
+    main_class = "com.mattnworb.helloworld.HelloWorldServer",
+    deps = [
+        "//hello-world/proto/mattnworb/helloworld/v1:service_java_proto",
+        "//hello-world/proto/mattnworb/helloworld/v1:service_java_grpc",
+        "@grpc-java//api",
+        "@grpc-java//netty",
+        "@grpc-java//protobuf",
+        "@grpc-java//stub",
+        "@maven//:com_google_guava_guava",
+    ],
+)

@@ -12,7 +12,7 @@ maven.install(
         # ensuring consistent versions between grpc and protobuf
         "com.google.code.findbugs:jsr305:3.0.2",
         "com.google.code.gson:gson:2.13.2",
-        "com.google.errorprone:error_prone_annotations:2.30.0",
+        "com.google.errorprone:error_prone_annotations:2.44.0",
         "com.google.guava:guava:33.3.1-jre",
     ],
     known_contributing_modules = ["", "grpc-java", "protobuf"],

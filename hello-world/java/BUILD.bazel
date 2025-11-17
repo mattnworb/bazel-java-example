@@ -1,4 +1,4 @@
-load("@rules_java//java:java_binary.bzl", "java_binary")
+load("@rules_java//java:defs.bzl", "java_binary", "java_test")
 
 java_binary(
     name = "cli",
@@ -28,4 +28,12 @@ java_binary(
         "@maven//:com_google_guava_guava",
         "@maven//:net_sourceforge_argparse4j_argparse4j",
     ],
+)
+
+# TODO (mattbrown 2025-11-17) create a real test
+java_test(
+    name = "simple_test",
+    srcs = ["src/test/java/com/mattnworb/helloworld/SimpleTest.java"],
+    main_class = "com.mattnworb.helloworld.SimpleTest",
+    use_testrunner = False,
 )

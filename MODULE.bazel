@@ -1,0 +1,2 @@
+bazel_dep(name = "protobuf", version = "33.1")
+bazel_dep(name = "rules_java", version = "9.0.3")

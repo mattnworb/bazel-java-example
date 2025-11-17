@@ -1,0 +1,19 @@
+load("@protobuf//bazel:java_proto_library.bzl", "java_proto_library")
+load("@protobuf//bazel:proto_library.bzl", "proto_library")
+load("@rules_java//java:java_library.bzl", "java_library")
+
+proto_library(
+    name = "service_proto",
+    srcs = ["service.proto"],
+    visibility = ["//visibility:public"],
+)
+
+java_proto_library(
+    name = "service_java_proto",
+    deps = [":service_proto"],
+)
+
+java_library(
+    name = "service_lib",
+    runtime_deps = [":service_java_proto"],
+)

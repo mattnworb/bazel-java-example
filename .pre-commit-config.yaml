@@ -1,15 +1,16 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
-    -   id: check-added-large-files
--   repo: local
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+  - repo: local
     hooks:
-    -   id: format-code
+      - id: format-code
         name: format code
         language: unsupported
-        entry: format
+        entry: >-
+          bash -c 'if [ -e "bazel-out/bazel_env-opt/bin/tools/bazel_env/bin/format" ]; then bazel-out/bazel_env-opt/bin/tools/bazel_env/bin/format "$@"; else echo "need to run '"'"'bazel run //tools:bazel_env'"'"' first to build the formatter"; exit 1; fi'

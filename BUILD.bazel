@@ -1,0 +1,6 @@
+alias(
+    name = "format",
+    actual = "//tools/format:format",
+)
+
+exports_files(["buf.yaml"])

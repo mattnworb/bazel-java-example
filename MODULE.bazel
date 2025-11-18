@@ -1,9 +1,18 @@
+# main dependencies
 bazel_dep(name = "grpc-java", version = "1.75.0")
 bazel_dep(name = "protobuf", version = "33.1")
+bazel_dep(name = "rules_buf", version = "0.5.2")
 bazel_dep(name = "rules_java", version = "9.0.3")
 bazel_dep(name = "rules_jvm_external", version = "6.9")
 bazel_dep(name = "rules_multitool", version = "1.9.0")
 
+# rules_buf setup
+buf = use_extension("@rules_buf//buf:extensions.bzl", "buf")
+
+# make `bazel run @rules_buf_toolchains//:buf` available to run buf.
+use_repo(buf, "rules_buf_toolchains")
+
+# rules_jvm_external setup
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 use_repo(maven, "maven")
 
@@ -26,10 +35,12 @@ maven.install(
     strict_visibility = True,
 )
 
+# rules_multitool setup
 multitool = use_extension("@rules_multitool//multitool:extension.bzl", "multitool")
 multitool.hub(lockfile = "//tools:multitool.lock.json")
 use_repo(multitool, "multitool")
 
+# dev dependencies
 bazel_dep(name = "aspect_rules_lint", version = "1.10.2", dev_dependency = True)
 bazel_dep(name = "bazel_env.bzl", version = "0.5.0", dev_dependency = True)
 bazel_dep(name = "buildifier_prebuilt", version = "8.2.1", dev_dependency = True)

@@ -4,7 +4,6 @@ bazel_dep(name = "rules_java", version = "9.0.3")
 bazel_dep(name = "rules_jvm_external", version = "6.9")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
-
 use_repo(maven, "maven")
 
 maven.install(
@@ -17,7 +16,14 @@ maven.install(
         "com.google.errorprone:error_prone_annotations:2.44.0",
         "com.google.guava:guava:33.5.0-jre",
     ],
-    known_contributing_modules = ["", "grpc-java", "protobuf"],
+    known_contributing_modules = [
+        "",
+        "grpc-java",
+        "protobuf",
+    ],
     repositories = ["https://repo.maven.apache.org/maven2/"],
     strict_visibility = True,
 )
+
+bazel_dep(name = "bazel_env.bzl", version = "0.5.0", dev_dependency = True)
+bazel_dep(name = "buildifier_prebuilt", version = "8.2.1", dev_dependency = True)

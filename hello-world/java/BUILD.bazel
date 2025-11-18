@@ -9,8 +9,8 @@ java_binary(
         "//hello-world/proto/mattnworb/helloworld/v1:service_java_proto",
         "@grpc-java//api",
         "@grpc-java//netty",
-        "@protobuf//java/core",
         "@maven//:net_sourceforge_argparse4j_argparse4j",
+        "@protobuf//java/core",
     ],
 )
 

@@ -3,5 +3,7 @@ load("@aspect_rules_lint//format:defs.bzl", "format_multirun")
 format_multirun(
     name = "format",
     java = "@multitool//tools/google-java-format",
+    protocol_buffer = "@rules_buf_toolchains//:buf",
+    starlark = "@buildifier_prebuilt//:buildifier",
     visibility = ["//visibility:public"],
 )

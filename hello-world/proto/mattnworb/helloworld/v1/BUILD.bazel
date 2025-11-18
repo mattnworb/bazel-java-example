@@ -22,4 +22,3 @@ java_grpc_library(
     srcs = [":service_proto"],
     deps = [":service_java_proto"],
 )
-

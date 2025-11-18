@@ -7,6 +7,7 @@ bazel_env(
     },
     tools = {
         "buildifier": "@buildifier_prebuilt//:buildifier",
+        "format": "//tools/format",
         "jar": "$(JAVABASE)/bin/jar",
         "java": "$(JAVA)",
     },

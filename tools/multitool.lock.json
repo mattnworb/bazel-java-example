@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json",
+  "google-java-format": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/google/google-java-format/releases/download/v1.32.0/google-java-format_darwin-arm64",
+        "sha256": "9a7c20cd8612e45091e3b02508c515b6cfbbece36d880449f2a0c5896644a750",
+        "os": "macos",
+        "cpu": "arm64"
+      }
+    ]
+  }
+}

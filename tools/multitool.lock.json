@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json",
+  "google-java-format": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/google/google-java-format/releases/download/v1.32.0/google-java-format_darwin-arm64",
+        "sha256": "9a7c20cd8612e45091e3b02508c515b6cfbbece36d880449f2a0c5896644a750",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/google/google-java-format/releases/download/v1.32.0/google-java-format_linux-arm64",
+        "sha256": "54cc80d669e9a67c82d51b491203f2e3b2ce61822e0ccdacc556ce87bb8537f9",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/google/google-java-format/releases/download/v1.32.0/google-java-format_linux-x86-64",
+        "sha256": "79629570d0045ccfbf31c02e320549ca9657a6efc6c1b2982ed9fff62e08baea",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/google/google-java-format/releases/download/v1.32.0/google-java-format_windows-x86-64.exe",
+        "sha256": "3f85d71405a6e49c5bccb8b03324f6b46e18ca82f5771f076ae5ef186eb24687",
+        "os": "windows",
+        "cpu": "x86_64"
+      }
+    ]
+  }
+}

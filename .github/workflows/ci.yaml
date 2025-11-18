@@ -21,6 +21,8 @@ jobs:
           disk-cache: true
           repository-cache: true
 
+      - name: check formatting
+        run: bazel run //tools/format:format.check
       - name: bazel test //...
         run: bazel test //... --action_env=CI=true
 

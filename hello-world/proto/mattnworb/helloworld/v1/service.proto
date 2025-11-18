@@ -4,7 +4,7 @@ package mattnworb.helloworld.v1;
 option java_package = "com.mattnworb.helloworld.v1";
 
 service HelloWorldService {
-  rpc SayHello (SayHelloRequest) returns (SayHelloResponse);
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse);
 }
 
 message SayHelloRequest {

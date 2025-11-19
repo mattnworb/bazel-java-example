@@ -1,4 +1,6 @@
 version: v2
+modules:
+  - path: hello-world/proto
 lint:
   use:
     - STANDARD

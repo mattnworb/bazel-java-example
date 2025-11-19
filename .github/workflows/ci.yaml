@@ -23,6 +23,23 @@ jobs:
       - name: check formatting
         run: bazel run //tools/format:format.check
 
+  lint:
+    name: check linters
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Bazel environment
+        uses: bazel-contrib/setup-bazel@0.15.0
+        with:
+          bazelisk-cache: true
+          disk-cache: true
+          repository-cache: true
+
+      - name: check formatting
+        # TODO (mattbrown 2025-11-19) move this to script
+        run: bazel build //... --aspects=//tools/lint:linters.bzl%buf --@aspect_rules_lint//lint:fail_on_violation
+
   test:
     name: test
     runs-on: ubuntu-latest

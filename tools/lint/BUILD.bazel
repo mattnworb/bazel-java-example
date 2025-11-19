@@ -1,0 +1,37 @@
+load("@rules_java//java:defs.bzl", "java_binary")
+
+alias(
+    name = "buf",
+    actual = "@rules_buf_toolchains//:buf",
+)
+
+# java_binary(
+#     name = "pmd",
+#     # In PMD 6.x, this was the main class:
+#     # main_class = "net.sourceforge.pmd.PMD",
+#     # It changed in version 7.0
+#     # https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_userdocs_migrating_to_pmd7.html
+#     main_class = "net.sourceforge.pmd.cli.PmdCli",
+#     runtime_deps = ["@net_sourceforge_pmd"],
+# )
+
+# java_binary(
+#     name = "checkstyle",
+#     main_class = "com.puppycrawl.tools.checkstyle.Main",
+#     runtime_deps = ["@com_puppycrawl_tools_checkstyle//jar"],
+# )
+
+# java_binary(
+#     name = "spotbugs",
+#     jvm_flags = [
+#         "--add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+#         "--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
+#         "--add-exports jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
+#         "--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+#         "--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
+#     ],
+#     main_class = "edu.umd.cs.findbugs.LaunchAppropriateUI",
+#     runtime_deps = [
+#         "@spotbugs//:jar",
+#     ],
+# )

@@ -1,0 +1,6 @@
+{
+  "java.server.launchMode": "Standard",
+  "java.import.maven.enabled": false,
+  "java.import.gradle.enabled": false,
+  "java.compile.nullAnalysis.mode": "disabled"
+}

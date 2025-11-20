@@ -7,17 +7,17 @@ package(
 )
 
 proto_library(
-    name = "service_proto",
-    srcs = ["service.proto"],
+    name = "route_guide_proto",
+    srcs = ["route_guide.proto"],
 )
 
 java_proto_library(
-    name = "service_java_proto",
-    deps = [":service_proto"],
+    name = "route_guide_java_proto",
+    deps = [":route_guide_proto"],
 )
 
 java_grpc_library(
-    name = "service_java_grpc",
-    srcs = [":service_proto"],
-    deps = [":service_java_proto"],
+    name = "route_guide_java_grpc",
+    srcs = [":route_guide_proto"],
+    deps = [":route_guide_java_proto"],
 )

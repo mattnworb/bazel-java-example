@@ -1,0 +1,18 @@
+load("@rules_java//java:defs.bzl", "java_binary")
+
+java_binary(
+    name = "client",
+    srcs = glob(["src/main/java/**/*.java"]),
+    main_class = "com.mattnworb.routeguide.client.RouteGuideClient",
+    deps = [
+        "//routeguide/proto/mattnworb/routeguide/v1:route_guide_java_grpc",
+        "//routeguide/proto/mattnworb/routeguide/v1:route_guide_java_proto",
+        "//routeguide/util",
+        "@grpc-java//api",
+        "@grpc-java//netty",
+        "@grpc-java//stub",
+        "@maven//:com_google_guava_guava",
+        "@protobuf//java/core",
+        "@protobuf//java/util",
+    ],
+)

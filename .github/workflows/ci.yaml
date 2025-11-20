@@ -11,7 +11,7 @@ jobs:
     name: check formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Setup Bazel environment
         uses: bazel-contrib/setup-bazel@0.15.0
@@ -27,7 +27,7 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Setup Bazel environment
         uses: bazel-contrib/setup-bazel@0.15.0

@@ -1,0 +1,7 @@
+load("@rules_java//java:defs.bzl", "java_library")
+
+java_library(
+    name = "core",
+    srcs = glob(["src/main/java/com/mattnworb/calculator/*.java"]),
+    visibility = ["//calculator/cli:__pkg__"],
+)

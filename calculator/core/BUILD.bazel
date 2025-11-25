@@ -1,7 +1,14 @@
-load("@rules_java//java:defs.bzl", "java_library")
+load("@rules_java//java:defs.bzl", "java_library", "java_test")
 
 java_library(
     name = "core",
-    srcs = glob(["src/main/java/com/mattnworb/calculator/*.java"]),
+    srcs = ["src/main/java/com/mattnworb/calculator/Calculator.java"],
     visibility = ["//calculator/cli:__pkg__"],
+)
+
+java_test(
+    name = "core_test",
+    srcs = ["src/test/java/com/mattnworb/calculator/CalculatorTest.java"],
+    test_class = "com.mattnworb.calculator.CalculatorTest",
+    deps = [":core"],
 )

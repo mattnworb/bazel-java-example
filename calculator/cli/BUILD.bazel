@@ -1,0 +1,11 @@
+load("@rules_java//java:defs.bzl", "java_binary")
+
+java_binary(
+    name = "cli",
+    srcs = ["src/main/java/com/mattnworb/calculator/cli/Main.java"],
+    main_class = "com.mattnworb.calculator.cli.Main",
+    deps = [
+        "//calculator/core",
+        "@maven//:net_sourceforge_argparse4j_argparse4j",
+    ],
+)

@@ -3,3 +3,9 @@
 /bazel-bin
 /bazel-out
 /bazel-testlogs
+
+# VS Code Bazel/Java extension stuff
+/.eclipse/
+eclipse-bin/
+eclipse-testbin/
+.bazeltargets

@@ -1,6 +1,6 @@
 # main dependencies
 bazel_dep(name = "grpc-java", version = "1.78.0")
-bazel_dep(name = "protobuf", version = "33.4")
+bazel_dep(name = "protobuf", version = "33.5")
 bazel_dep(name = "rules_buf", version = "0.5.2")
 bazel_dep(name = "rules_java", version = "9.3.0")
 bazel_dep(name = "rules_jvm_external", version = "6.9")

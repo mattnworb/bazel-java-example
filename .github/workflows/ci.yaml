@@ -47,7 +47,7 @@ jobs:
           cp -Rv $(bazel info bazel-testlogs) /tmp/bazel-testlogs
 
       - if: ${{ always() }}
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: bazel-testlogs
           path: /tmp/bazel-testlogs
